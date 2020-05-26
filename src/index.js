@@ -7,9 +7,11 @@ import StorePicker from './components/StorePicker';
 import * as serviceWorker from './serviceWorker';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
+
+const repo = `/${window.location.pathname.split('/')[1]}`;
 const Root = () => {
   return (
-    <Router>
+    <Router basename={repo}>
       <div>
         <Switch>
           <Route exact path="/" component={StorePicker} />
